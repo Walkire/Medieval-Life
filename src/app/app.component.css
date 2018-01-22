@@ -1,12 +1,25 @@
-.container {
-  padding:5px 30px 30px 30px;
-  margin:30px;
-  border:solid white 1px;
-  border-radius:5px;
-  background-color:#e6e6e6;
-  text-align:center;
+.btn-circle {
+  width: auto;
+  height: auto;
+  text-align: center;
+  padding: 0px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
 }
 
-.btn-success, .btn-danger {
-  width:200px;
+.main-color {
+  background-color: #cdcdcd;
+}
+
+.farm-color {
+  background-color: #94ad3f;
+}
+
+.mine-color {
+  background-color: #d69174;
+}
+
+.wood-color {
+  background-color: #f1bf42;
 }

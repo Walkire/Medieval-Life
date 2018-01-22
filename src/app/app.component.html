@@ -1,28 +1,109 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
-<h1>REEEEE</h1>
-    <button id="click" type="button" class="btn btn-primary btn-lg btn-block">CLICK ME</button>
-    <hr>
-    <p>
-    Clicks: <span id="total_clicks">0</span><br />
-    Clicks per <small id="time_period">1.00</small> second: <span id="clicks_per_second">0</span>
-    </p>
-    <h3>Buy</h3>
-    <table class="table">
-        <tr>
-          <td>Autoclicker</td>
-          <td><span id="autoclicker_level">lvl 0</span></td>
-          <td><button id="buy_click" type="button" class="btn btn-success">Buy for 1</button></td>
-        </tr>
-        <tr>
-          <td>Speed up by 10%</td>
-          <td><span id="speed_level">lvl 0</span></td>
-          <td><button id="upgrade_speed" type="button" class="btn btn-success">Buy for 100</button></td>
-        </tr>
-        <tr>
-          <td>Increase Clicks Increment</td>
-          <td></td>
-          <td><button id="increase_clicks" type="button" class="btn btn-success">Buy for 100</button></td>
-        </tr>
-    </table>
+<div class="container-fluid main-color">
+  <h1>Medieval Life</h1>
+  <h4><small>Player: {{Game.player.class}}</small></h4>
+  <h4><small>Level: {{Game.player.level}}</small></h4>
+
+  <div id=gameRow class="row">
+    <!--Main Panel-->
+    <div id=mainPanel class="col-sm-8">
+      <div id=resourceRow class="row" style="padding: 15px;">
+        <!--Farming-->
+        <div id=farmMain class="col-sm-4">
+          <div class="row" style="margin-bottom:15px">
+            <div id=farmIcon class="col-sm-6" *ngIf="Game.farming.active">
+              <button type="button" (click)="farmClick(1)" class="btn btn btn-default btn-circle farm-color">
+                <img src="../assets/img/farming-icon.png" class="img-responsive img-circle">
+              </button>
+            </div>
+            <div id=farmInfo class="col-sm-6">
+              <h4>Farming</h4>
+              <h6>Food: {{Game.farming.resource}}</h6>
+              <h6>Knowledge: {{Game.farming.knowledge}}</h6>
+            </div>
+          </div>
+          <div class="row progress" style="width: 50%;">
+            <div id="farmProgBar" class="progress-bar progress-bar-striped active" role="farming-progressbar"
+              aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+              {{Game.farming.progress.value}}%
+            </div>
+          </div>
+        </div>
+
+        <!--Woodcutting-->
+        <div id=woodMain class="col-sm-4" *ngIf="Game.woodcutting.active">
+          <div class="row" style="margin-bottom:15px">
+            <div id=woodIcon class="col-sm-6">
+              <button type="button" (click)="woodClick(1)" class="btn btn btn-default btn-circle wood-color">
+                <img src="../assets/img/woodcutting-icon.png" class="img-responsive img-circle">
+              </button>
+            </div>
+            <div id=woodInfo class="col-sm-6">
+              <h4>Woodcutting</h4>
+              <h6>Wood: {{Game.woodcutting.resource}}</h6>
+              <h6>Knowledge: {{Game.woodcutting.knowledge}}</h6>
+            </div>
+        </div>
+      <div class="row progress" style="width: 50%;">
+        <div id="woodProgBar" class="progress-bar progress-bar-striped active" role="woodcutting-progressbar"
+          aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+          {{Game.woodcutting.progress.value}}%
+        </div>
+      </div>
+      </div>
+
+      <!--Mining-->
+      <div id=mineMain class="col-sm-4" *ngIf="Game.mining.active">
+        <div class="row" style="margin-bottom:15px">
+          <div id=mineIcon class="col-sm-6">
+            <button type="button" (click)="mineClick(1)" class="btn btn btn-default btn-circle mine-color">
+              <img src="../assets/img/mining-icon.png" class="img-responsive img-circle">
+            </button>
+          </div>
+          <div id="mainInfo" class="col-sm-6">
+            <h4>Mining</h4>
+            <h6>Ore: {{Game.mining.resource}}</h6>
+            <h6>Knowledge: {{Game.mining.knowledge}}</h6>
+          </div>
+      </div>
+      <div class="row progress" style="width: 50%;">
+        <div id="mineProgBar" class="progress-bar progress-bar-striped active" role="mining-progressbar"
+          aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+          {{Game.mining.progress.value}}%
+        </div>
+      </div>
+      </div>
+      </div>
+
+      <div id="specialRow" class="row">
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item" *ngIf="Game.library.active">
+            <a id="library-tab" class="nav-link active"  data-toggle="tab" href="#library">Library</a>
+          </li>
+          <li class="nav-item" *ngIf="Game.questboard.active">
+            <a id="quests-tab" class="nav-link" data-toggle="tab" href="#quests">Quests</a>
+          </li>
+          <li class="nav-item" *ngIf="Game.trader.active">
+            <a id="trader-tab" class="nav-link" data-toggle="tab" href="#trader">Trader</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active container" id="library"><br>
+            <img src="../assets/img/study-icon.png" class="img-responsive img-circle">
+          </div>
+          <div class="tab-pane container" id="quests"><br>
+            <img src="../assets/img/sword-icon.png" class="img-responsive img-circle">
+          </div>
+          <div class="tab-pane container" id="trader"><br>
+            <img src="../assets/img/trade-icon.png" class="img-responsive img-circle">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Side Panel-->
+    <div id=sidePanel class="col-sm-4">
+      Hello
+    </div>
+  </div>
 </div>
