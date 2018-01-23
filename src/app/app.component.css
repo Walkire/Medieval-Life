@@ -23,3 +23,18 @@
 .wood-color {
   background-color: #f1bf42;
 }
+
+.library-background {
+  background-color: #3e6dad;
+  opacity: .4;
+}
+
+.quest-background {
+  background-color: #31b7d1;
+  opacity: .4;
+}
+
+.trader-background {
+  background-color: #a4cb72;
+  opacity: .4;
+}
