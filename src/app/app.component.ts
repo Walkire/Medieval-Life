@@ -25,7 +25,7 @@ export class AppComponent implements OnInit{
         gainDifficulty: 2
       },
       woodcutting: {
-        active: true,
+        active: false,
         progress: {
           value: 0,
           increment: 10
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit{
         gainDifficulty: 4
       },
       mining: {
-        active: true,
+        active: false,
         progress: {
           value: 0,
           increment: 5
@@ -45,13 +45,13 @@ export class AppComponent implements OnInit{
         gainDifficulty: 8
       },
       library: {
-        active: true
+        active: false
       },
       questboard: {
         active: true
       },
       trader: {
-        active: true
+        active: false
       },
     }
   }

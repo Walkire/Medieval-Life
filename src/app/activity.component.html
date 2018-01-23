@@ -1,0 +1,26 @@
+<ul class="nav nav-pills" role="tablist">
+  <li class="nav-item" *ngIf="Game.library.active">
+    <a id="library-tab" class="nav-link"  data-toggle="tab" href="#library">Library</a>
+  </li>
+  <li class="nav-item active" *ngIf="Game.questboard.active">
+    <a id="quests-tab" class="nav-link" data-toggle="tab" href="#quests">Quests</a>
+  </li>
+  <li class="nav-item" *ngIf="Game.trader.active">
+    <a id="trader-tab" class="nav-link" data-toggle="tab" href="#trader">Trader</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane library-background" id="library"><br>
+    <h3 style="color: white;">Library</h3>
+  </div>
+
+  <div class="tab-pane active quest-background" id="quests"><br>
+    <h3>Quest Board</h3>
+  </div>
+
+  <div class="tab-pane trader-background" id="trader"><br>
+    <h3>Trading Post</h3>
+  </div>
+</div>
+</div>

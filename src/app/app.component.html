@@ -78,24 +78,27 @@
       <div id="specialRow" class="row">
         <ul class="nav nav-pills" role="tablist">
           <li class="nav-item" *ngIf="Game.library.active">
-            <a id="library-tab" class="nav-link active"  data-toggle="tab" href="#library">Library</a>
+            <a id="library-tab" class="nav-link"  data-toggle="tab" href="#library">Library</a>
           </li>
-          <li class="nav-item" *ngIf="Game.questboard.active">
+          <li class="nav-item active" *ngIf="Game.questboard.active">
             <a id="quests-tab" class="nav-link" data-toggle="tab" href="#quests">Quests</a>
           </li>
           <li class="nav-item" *ngIf="Game.trader.active">
             <a id="trader-tab" class="nav-link" data-toggle="tab" href="#trader">Trader</a>
           </li>
         </ul>
+
         <div class="tab-content">
-          <div class="tab-pane active container library-background" id="library"><br>
-            <img src="../assets/img/study-icon.png" class="img-responsive img-circle">
+          <div class="tab-pane library-background" id="library"><br>
+            <h3 style="color: white;">Library</h3>
           </div>
-          <div class="tab-pane container quest-background" id="quests"><br>
-            <img src="../assets/img/sword-icon.png" class="img-responsive img-circle">
+
+          <div class="tab-pane active quest-background" id="quests"><br>
+            <h3>Quest Board</h3>
           </div>
-          <div class="tab-pane container trader-background" id="trader"><br>
-            <img src="../assets/img/trade-icon.png" class="img-responsive img-circle">
+
+          <div class="tab-pane trader-background" id="trader"><br>
+            <h3>Trading Post</h3>
           </div>
         </div>
       </div>
@@ -103,6 +106,24 @@
 
     <!--Side Panel-->
     <div id=sidePanel class="col-sm-4">
+        <ul class="nav nav-pills nav-justified" role="tablist">
+          <li class="nav-item active">
+            <a id="workers-tab" class="nav-link"  data-toggle="tab" href="#workers">Workers</a>
+          </li>
+          <li class="nav-item">
+            <a id="buildings-tab" class="nav-link" data-toggle="tab" href="#buildings">Buildings</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="workers"><br>
+            <h3>Workers</h3>
+          </div>
+
+          <div class="tab-pane" id="buildings"><br>
+            <h3>Buildings</h3>
+          </div>
+        </div>
     </div>
   </div>
 </div>
